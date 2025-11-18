@@ -6,7 +6,7 @@
 
 /*BODY*/
 body {
-    background-color: #f4f7fc;
+    background-color: #ffffff;
 }
 
 /*JUDUL*/
@@ -29,6 +29,15 @@ body {
     justify-content: flex-end; 
     margin-bottom: 10px; 
     margin-right: 40px;
+}
+
+/* FORM FILTER */
+.form-filter{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin: 10px;
+    background-color: #cecece;
 }
 
 
@@ -57,138 +66,10 @@ th {
     font-weight: 600;
 }
 
-/*TOMBOL*/
-.btn {
-    border: none;
-    padding: 7px 14px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-
-.btn-tambah, 
-.btn-update,
-.btn-simpan {
-    background-color: #00d331;
-    color: white;
-    padding: 10px;
-}
-
-.btn-tambah:hover,
-.btn-update:hover,
-.btn-simpan:hover {
-    background-color: #00700f;
-}
-
-.btn-edit {
-    background-color: #ff6600;
-    color: white;
-}
-
-.btn-edit:hover {
-    background-color: #a36200;
-}
-
-.btn-hapus, .btn-batal {
-    background-color: #db0117;
-    color: white;
-}
-
-.btn-hapus:hover,
-.btn-batal:hover {
-    background-color: #690000;
-}
-
-
-/*FORM TAMBAH / EDIT*/
-.inputan {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    margin: 10px;
-}
-
-.input-supplier,
-.input-barang,
-.input-edit{
-    flex: 1;
-    border: 1px solid #e0e0e0;
-    padding: 10px;
-    border-radius: 6px;
-    background: #d8d8d8;
-}
-
-.input-supplier h3,
-.input-barang h3,
-.input-edit h3 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #057eff;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.form-group {         
-    margin-bottom: 20px;  
-}
-.form-group label {  
-    font-weight: 600;
-    display: block;
-    margin-bottom: 10px;
-    color: #333;
-    text-align: left;    
-}
-.form-group input[type="text"],
-.form-group input[type="date"] {            
-    width: 70%;
-    padding: 9px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    font-size: 14px;
-}
-
-.form-group input[type="text"]:focus,
-.form-group input[type="date"]:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 4px rgba(0,123,255,0.3);
-    outline: none;
-}
-
-.form-group select {
-  width: 70%;
-  padding: 9px 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
-  font-size: 14px;
-  color: #333;
-  outline: none;
-  cursor: pointer;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.form-group select:focus {
-  border-color: #4a90e2;
-  box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
-}
-
-/* CSS LAPORAN TRANSAKSI */
-
-.form-filter{
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    margin: 10px;
-    background-color: #cecece;
-}
-
 /* DIAGRAM */
 .diagram{
     width: 100%;
     display: flex;
-    justify-content: center;
     margin-top: 20px;
 }
 
@@ -199,7 +80,7 @@ th {
     margin-top: 15px;
 }
 
-.tombol .btn {
+.tombol .btn, .btn-tampilkan {
     width: 100px;
     text-align: center;
     padding: 8px 0;
@@ -209,15 +90,15 @@ th {
     cursor: pointer;
 }
 
-.tombol .btn.btn-success,
-.tombol .btn-cetak,
-.btn .btn-tampilkan {
+.btn-tampilkan {
     background-color: #28a745;
     color: white;
 }
 
-.tombol .btn.btn-danger {
-    background-color: #dc3545;
+.tombol .btn-cetak,
+.tombol .btn-ekspor {
+    margin-left: 10px;
+    background-color: #ee6b00;
     color: white;
 }
 
@@ -225,19 +106,8 @@ th {
     opacity: 0.9;
 }
 
-/*PESAN*/
-
-.errors {
-    color: red;
-    font-weight: 500;
-    text-align: left;
+@media print {
+    .no-print {
+        display: none !important;
+    }
 }
-
-.sukses {
-    text-align: center;
-    font-weight: 500;
-    font-size: 20px;
-    color: rgb(1, 212, 1);
-}
-
-

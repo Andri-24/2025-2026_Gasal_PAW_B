@@ -84,20 +84,18 @@ $pendapatan = mysqli_fetch_assoc(mysqli_query($conn, $queryPendapatan));
         <?= "<h2>Laporan Transaksi dari tanggal $dari sampai dengan tanggal $sampai</h2>" ?>
     </div>
 
-    <div class="tombol">
-        <button onclick="window.print()" 
-        style="btn-cetak">
+    <div class="tombol no-print">
+        <button onclick="window.print()" class="btn btn-cetak">
             Cetak Halaman
         </button>
 
-        <form action="excel_reporting_transaksi.php" method="POST" style="display:inline;">
-            <input type="hidden" name="export" value="1">
-            <button type="submit">Export Excel</button>
-        </form>
+        <button name="export" class="btn btn-ekspor" onclick="window.location.href='excel_reporting_transaksi.php?export=1&dari=<?= $dari ?>&sampai=<?= $sampai ?>'">
+            Export Excel
+        </button>
     </div>
 
 
-    <div class="form-filter">
+    <div class="form-filter no-print">
         <form method="GET" action="">
             <span class="form-date">
                 <input type="date" name="dari" value="<?= $dari ?>">
@@ -106,7 +104,7 @@ $pendapatan = mysqli_fetch_assoc(mysqli_query($conn, $queryPendapatan));
                 <input type="date" name="sampai" value="<?= $sampai ?>">
             </span>
             <span>
-                <button style="btn btn-tampilkan" type="submit">Tampilkan</button>
+                <button class="btn-tampilkan" type="submit">Tampilkan</button>
             </span>
         </form>
     </div>
